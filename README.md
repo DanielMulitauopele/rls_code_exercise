@@ -34,7 +34,7 @@ To setup this application locally, take the following steps:
 * Clone this repository down into a local directory of your choice.
 * Navigate(cd) into rls_code_exercise
 * Run bundle
-* Run ruby start_calculator.rb to run the program
+* Run ruby sentence_counter.rb to run the program
 
 ## Testing
 
