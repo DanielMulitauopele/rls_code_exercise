@@ -1,4 +1,10 @@
 class SentenceCounter
+  attr_reader :sentences
+
+  def initialize
+    @sentences = []
+  end
+
   def count(file)
     File.readlines(file).map do |line|
       line.chomp
