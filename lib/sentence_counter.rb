@@ -1,6 +1,7 @@
 class SentenceCounter
   def count(file)
-    a = File.readlines(file)
-    require "pry"; binding.pry
+    File.readlines(file).map do |line|
+      line.chomp
+    end
   end
 end

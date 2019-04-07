@@ -11,4 +11,11 @@ class SentenceCounterTest < MiniTest::Test
   def test_it_exists
     assert_instance_of SentenceCounter, @sc
   end
+
+  def test_sentences_is_empty_by_default
+    expected = []
+    actual = @sc.sentences
+
+    assert_equal expected, actual
+  end
 end
