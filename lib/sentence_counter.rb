@@ -6,6 +6,10 @@ class SentenceCounter
   end
 
   def count(file)
+    @sentences = format(file)
+  end
+
+  def format(file)
     File.readlines(file).map do |line|
       line.chomp
     end
