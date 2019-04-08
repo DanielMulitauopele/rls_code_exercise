@@ -53,7 +53,7 @@ Because private methods cannot be tested, I chose to only test the instance of t
 
 My first course of action was to check my assumptions. I asked questions regarding the types of files that might be used for this program, and I was given freedom to make the determination for myself. Because the input file was only lines of sentences, I believed that a .txt file would be best suited for the input file. The output file, however, would benefit in a CSV format. I chose to render my results in a CSV file, with headers inserted.
 
-The initial prompt was to write all of this code as a single function/method. However, in order to adhere to Ruby best practices, I felt it would be better written as a series of small, SRP methods within a class. Each method would do one thing, and would make for cleaner, encapsulated code. If the position requires that I write the code in a single method, I can do that as well.
+The initial prompt was to write all of this code as a single function/method. However, in order to adhere to Ruby best practices (OOP, Sandi Metz guidelines), I felt it would be better written as a series of small, SRP methods within a class. Each method would do one thing, and would make for cleaner, encapsulated code. If the position requires that I write the code in a single method, I can do that as well.
 
 ### Time Complexity
 
