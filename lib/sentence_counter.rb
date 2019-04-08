@@ -39,8 +39,8 @@ class SentenceCounter
 
   # This method converts the hash values back into an array, so that it can be inserted into the CSV file. It's time complexity is O(n).
   def load_data(csv)
-    @hash.to_a.each do |sentence_array|
-      csv << sentence_array
+    @hash.each do |sentence, count|
+      csv << [sentence, count]
     end
   end
 end
