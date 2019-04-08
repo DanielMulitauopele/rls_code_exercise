@@ -9,6 +9,7 @@
 * [Setup](#setup)
 * [Testing](#testing)
 * [Implementation](#implementation)
+* [Time Complexity](#time-complexity)
 * [Dependencies](#dependencies)
 * [Contributors](#contributors)
 
@@ -19,6 +20,9 @@ as my understanding of OOP and DRY principles. As a candidate for the
 software development position at Real Life Sciences, I hope this application demonstrates my aptitude for critical thinking, efficiency, and clean code. The prompt for this project is listed below.
 
 ## Prompt
+
+Write a simple function that takes in an input file of sentences (single column, one per line) and produces a new file with the ordered frequency counts of these sentences, in any programming language. For instance, a couple example sentences are: "I like dogs" and "I like cats".
+Analyze your program and tell us a detailed running time (time complexity) of it i.e. big o notation, based on parameters you define (i.e. N = number of lines in the input file, etc).
 
 ## System Requirements
 
@@ -35,20 +39,25 @@ To setup this application locally, take the following steps:
 * Navigate(cd) into rls_code_exercise
 * Run bundle
 * Run ruby sentence_counter.rb to run the program
+* Check the data folder for your newly created CSV file.
 
 ## Testing
 
 To test this application locally, take the following steps:
 
-* 1
+* After setup, run ruby test/sentence_counter_test.rb
+
+Because private methods cannot be tested, I chose to only test the instance of the class, as well as the attributes of the class. I believe that a basic architecture for testing, albeit incomplete, would be sufficient for this exercise.
 
 ## Implementation
 
-### Initial Planning Process
+My first course of action was to check my assumptions. I asked questions regarding the types of files that might be used for this program, and I was given freedom to make the determination for myself. Because the input file was only lines of sentences, I believed that a .txt file would be best suited for the input file. The output file, however, would benefit in a CSV format. I chose to render my results in a CSV file, with headers inserted.
 
-### Refactoring
+The initial prompt was to write all of this code as a single function/method. However, in order to adhere to Ruby best practices, I felt it would be better written as a series of small, SRP methods within a class. Each method would do one thing, and would make for cleaner, encapsulated code. If the position requires that I write the code in a single method, I can do that as well.
 
-### Testing
+### Time Complexity
+
+The time complexity of the whole process is O(n) in that it directly scales with the size of the sample text file. In the code, you will find comments that track the time complexity of each method, and in general, they all run in O(n) time. Because the program needs to read every line of code in order to count the frequency of a sentence, the fastest possible time it can run in is O(n). A linear time growth is the best that can be expected. 
 
 ## Dependencies
 
