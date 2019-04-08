@@ -13,6 +13,8 @@ class SentenceCounter
     create_csv
   end
 
+  private
+
   def format(file)
     @sentences = File.readlines(file).map do |line|
       line.chomp
