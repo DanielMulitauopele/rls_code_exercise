@@ -13,14 +13,17 @@ class SentenceCounter
     create_csv
   end
 
+  def format(file)
+    @sentences = File.readlines(file).map do |line|
+      line.chomp
+    end
+  end
+
   def create_csv
     count
-    CSV.open("sorted_sentences.csv", "wb") do |csv|
-      csv << ["sentence", "frequency_count"]
-      @hash.to_a.each do |sentence_array|
-        csv << sentence_array
-      end
-    end
+    csv = CSV.open("./data/sorted_sentences.csv", "wb")
+    csv << ["sentence", "frequency_count"]
+    load_data(csv)
   end
 
   def count
@@ -29,9 +32,9 @@ class SentenceCounter
     end
   end
 
-  def format(file)
-    @sentences = File.readlines(file).map do |line|
-      line.chomp
+  def load_data(csv)
+    @hash.to_a.each do |sentence_array|
+      csv << sentence_array
     end
   end
 end
